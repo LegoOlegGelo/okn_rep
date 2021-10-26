@@ -37,7 +37,7 @@ void rnd_perm(int* arr, const int size)
 void rnd_arr(int* arr, const int size)
 {
     for (int i = 0; i < size; i++)
-        *(arr++) = 1000 + rand() % 2001;
+        *(arr++) = -1000 + rand() % 2001;
 }
 
 int main()
