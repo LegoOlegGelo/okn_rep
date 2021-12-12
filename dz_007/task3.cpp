@@ -13,18 +13,22 @@ int main()
 	char* s_copy = new char[buf_size];
 	strcpy_s(s_copy, buf_size - 1, str);
 
+	char* lastname = new char[buf_size];
+
 	char* context;
 	for (int i = 0; i < 3; i++)
 	{
 		char* part = strtok_s(s_copy, " ", &context);
 
-		if (i == 0) cout << part << " ";
+		if (i == 0) lastname = part;
 		else cout << part[0] << ". ";
 
 		s_copy = nullptr;
 	}
-	cout << endl;
+	cout << lastname << endl;
 
 	delete[] str;
+	delete[] s_copy;
+	delete[] lastname;
 	return 0;
 }
