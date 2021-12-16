@@ -71,6 +71,7 @@ void quicksort(int *array, int begin, int end) {
 
 int main()
 {
+    setlocale(LC_ALL, "Rus");
     srand(time(NULL));
     int size = 10;
     cin >> size;
