@@ -31,7 +31,7 @@ int main()
 
 	// создаем матрицу размером меньше
 	int new_rows = rows - 1, new_cols = cols - 1;
-	int** matrix = create_matrix(rows, cols);
+	int** matrix = create_matrix(new_rows, new_cols);
 
 	// создаем новую матрицу и печатаем ее
 	for (int i = 0; i < new_rows; i++)
