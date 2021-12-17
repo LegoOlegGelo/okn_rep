@@ -3,17 +3,14 @@
 
 using namespace std;
 
-int main()
+int BUF_SIZE = 256;
+
+void print_name(const char* str)
 {
-	int buf_size = 256;
+	char* s_copy = new char[BUF_SIZE];
+	strcpy_s(s_copy, BUF_SIZE - 1, str);
 
-	char* str = new char[buf_size];
-	cin.getline(str, buf_size - 1);
-
-	char* s_copy = new char[buf_size];
-	strcpy_s(s_copy, buf_size - 1, str);
-
-	char* lastname = new char[buf_size];
+	char* lastname = new char[BUF_SIZE];
 
 	char* context;
 	for (int i = 0; i < 3; i++)
@@ -27,8 +24,17 @@ int main()
 	}
 	cout << lastname << endl;
 
-	delete[] str;
 	delete[] s_copy;
 	delete[] lastname;
+}
+
+int main()
+{
+	char* str = new char[BUF_SIZE];
+	cin.getline(str, BUF_SIZE - 1);
+
+	print_name(str);
+	
+	delete[] str;
 	return 0;
 }

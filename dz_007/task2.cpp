@@ -3,11 +3,8 @@
 
 using namespace std;
 
-int main()
+int get_sum(const char* str)
 {
-	char* str = new char[256];
-	cin >> str;
-
 	char* temp = new char[256];
 	strcpy_s(temp, 256, str);
 
@@ -20,7 +17,16 @@ int main()
 		temp = nullptr;
 	}
 
-	cout << sum << endl;
+	delete[] temp;
+	return sum;
+}
+
+int main()
+{
+	char* str = new char[256];
+	cin >> str;
+
+	cout << get_sum(str) << endl;
 
 	delete[] str;
 	return 0;
